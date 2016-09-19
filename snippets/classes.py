@@ -1,4 +1,3 @@
-from __future__ import print_function
 import numpy as np
 
 
@@ -7,15 +6,15 @@ class Account:
     def __init__(self):
         self.amount = 0
 
-    def putMoney(self, deposit):
+    def put_money(self, deposit):
         print("my amount is", self.amount)
         self.amount += deposit
         print("my amount is", self.amount)
 
-    def takeMoney(self, withdrawal):
+    def take_money(self, withdrawal):
         self.amount -= withdrawal
 
-    def printAmount(self):
+    def print_amount(self):
         print("my amount is", self.amount)
         print(self.amount)
 
@@ -25,15 +24,15 @@ class BankAccount:
     def __init__(self):
         self.accounts = [Account() for i in np.arange(1000)]
 
-    def putMoney(self, account, deposit):
+    def put_money(self, account, deposit):
         self.accounts[account].putMoney(deposit)
 
-    def takeMoney(self, account, withdrawal):
+    def take_money(self, account, withdrawal):
         self.accounts[account].takeMoney(withdrawal)
 
-    def printAmount(self, account):
+    def print_amount(self, account):
         self.accounts[account].printAmount()
 
 a = BankAccount()
-a.putMoney(5, 100)
-a.printAmount(5)
+a.put_money(5, 100)
+a.print_amount(5)
